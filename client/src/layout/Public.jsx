@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar.jsx';
 import { checkPath } from '../utils/checkPath.js';
 import config from '../config/config.js';
 
-const PublicLayout = () => {
+const Public = () => {
     const location = useLocation();
     return (
         <>
@@ -21,4 +21,4 @@ const PublicLayout = () => {
     )
 }
 
-export default PublicLayout;
+export default Public;
