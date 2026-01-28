@@ -1,38 +1,102 @@
 import matrixLogo from "../assets/matrixLogo.png";
 
-
-
 const Footer = () => {
-    return (
-        <footer className="bg-secondary dark:bg-black text-primary dark:text-accent pt-12 pb-8">
-            <div className="w-full max-w-[1168px] mx-auto px-5">
-                <div className="flex flex-col items-center justify-between md:flex-row md:items-center mb-8">
-                    <div className="flex items-center mb-4 md:mb-0">
-                        <img src ={matrixLogo} alt="Matrix Logo" className="h-12 w-auto mr-4" />
-                        <h4 className="text-2xl !text-light dark:text-secondary">Matrice del Destino</h4>
-                    </div>
-                    <h6 className=" !text-light dark:text-secondary"></h6>
-                </div>
-                <div className="flex flex-col md:flex-row justify-between border-t border-b border-gray-700 dark:border-gray-600 py-8 mb-8">
-                    <div className="w-full md:w-1/3 mb-8 md:mb-0">
-                        <h5 className="text-lg mb-4 !text-primary dark:text-secondary">Quick Links</h5>
-                        <ul className="space-y-2">
-                            <li><a href="#" className="!text-light hover:!text-accent dark:text-secondary transition-colors duration-300">Leave a review!</a></li>
-                            <li><a href="#" className="!text-light hover:!text-accent dark:text-secondary transition-colors duration-300">Latest news</a></li>
-                            <li><a href="#" className="!text-light hover:!text-accent dark:text-secondary transition-colors duration-300">They say about us</a></li>
-                        </ul>
-                    </div>
-                    <div className="w-full md:w-1/3 flex flex-col items-start md:items-center">
-                         <h5 className="text-lg !text-primary mb-4 dark:text-secondary">Follow Us</h5>
-                        
-                    </div>
-                </div>
-                <div className="text-left text-sm text-gray-500 dark:text-gray-400">
-                    <p className="!text-primary dark:text-secondary">© 2026 Matrice del Destino. All rights reserved.</p>
-                </div>
+  return (
+    <footer className="bg-secondary dark:bg-black text-primary dark:text-accent">
+      <div className="max-w-[1168px] mx-auto px-5">
+
+        {/* Contenuto principale */}
+        <div className="py-12 grid grid-cols-1 md:grid-cols-4 gap-10 border-b border-gray-600 dark:border-gray-500">
+
+          {/* Brand */}
+          <div>
+            <div className="flex items-center mb-4">
+              <img
+                src={matrixLogo}
+                alt="Matrice del Destino"
+                className="h-10 w-auto mr-3"
+              />
+              <h4 className="text-xl font-semibold !text-light dark:text-secondary">
+                Matrice del Destino
+              </h4>
             </div>
-        </footer>
-    )
-}
+
+            <p className="text-sm leading-relaxed !text-light dark:text-secondary">
+              Scopri il tuo percorso spirituale attraverso la numerologia della
+              Matrice del Destino. Il sito ufficiale di Serena Leone.
+            </p>
+          </div>
+
+          {/* Strumenti */}
+          <div>
+            <h5 className="mb-4 font-semibold !text-primary dark:text-secondary">
+              Strumenti
+            </h5>
+            <ul className="space-y-2 text-sm">
+              {[
+                "Homepage",
+                "Calcolatore Matrice Personale",
+                "Calcolatore Matrice di Coppia",
+                "Calcolatore Matrice del Bambino/a"
+              ].map((item) => (
+                <li key={item}>
+                  <a
+                    href="#"
+                    className="!text-light dark:text-secondary hover:!text-accent transition-colors"
+                  >
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Apprendimento */}
+          <div>
+            <h5 className="mb-4 font-semibold !text-primary dark:text-secondary">
+              Apprendimento
+            </h5>
+            <ul className="space-y-2 text-sm">
+              {[
+                "Zone della Matrice",
+                "Arcani Maggiori",
+                "Matrice vuota"
+              ].map((item) => (
+                <li key={item}>
+                  <a
+                    href="#"
+                    className="!text-light dark:text-secondary hover:!text-accent transition-colors"
+                  >
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Footer bottom */}
+        <div className="py-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-sm">
+          <p className="!text-primary dark:text-secondary">
+            © 2026 Matrice del Destino. Tutti i diritti riservati.
+          </p>
+
+          <div className="flex flex-wrap gap-4">
+            <a href="#" className="hover:!text-accent transition">
+              Privacy Policy
+            </a>
+            <a href="#" className="hover:!text-accent transition">
+              Cookie Policy
+            </a>
+            <a href="#" className="hover:!text-accent transition">
+              Termini e Condizioni
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+  );
+};
 
 export default Footer;
