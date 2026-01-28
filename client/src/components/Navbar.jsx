@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useSettings } from "../hooks/useSettings";
 
-import matrixLogo from "../assets/immagini/matrixLogo.png";
+import matrixLogo from "../assets/matrixLogo.png";
 
 import MatriciSelector from "./shared/MatriciSelector";
 import LearnSelector from "./shared/LearnSelector";
