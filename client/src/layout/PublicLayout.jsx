@@ -6,19 +6,27 @@ import { config } from '../config/index.js';
 
 const PublicLayout = () => {
     const location = useLocation();
+
+    // Trasforma automaticamente in array, anche se il config contiene una stringa singola
+    const navbarExclude = Array.isArray(config.PATH_TO_EXCLUDE.navbar) 
+        ? config.PATH_TO_EXCLUDE.navbar 
+        : [config.PATH_TO_EXCLUDE.navbar];
+
+    const footerExclude = Array.isArray(config.PATH_TO_EXCLUDE.footer) 
+        ? config.PATH_TO_EXCLUDE.footer 
+        : [config.PATH_TO_EXCLUDE.footer];
+
     return (
         <>
-        {/* Other layout components can go here */
-        checkPath(location.pathname, config.PATH_TO_EXCLUDE.navbar) && <Navbar />
-        }
-        <div>
-            <Outlet />
-        </div>
-        {/* Other layout components can go here */
-        checkPath(location.pathname, config.PATH_TO_EXCLUDE.footer) && <Footer />
-        }
+            {checkPath(location.pathname, navbarExclude) && <Navbar />}
+            
+            <div>
+                <Outlet />
+            </div>
+            
+            {checkPath(location.pathname, footerExclude) && <Footer />}
         </>
-    )
-}
+    );
+};
 
 export default PublicLayout;
