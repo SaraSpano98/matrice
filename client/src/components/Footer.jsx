@@ -1,4 +1,4 @@
-import matrixLogo from "../assets/matrix-logo.png";
+import matrixLogo from "../assets/matrixLogo.png";
 
 
 
