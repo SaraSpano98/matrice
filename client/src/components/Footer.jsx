@@ -1,4 +1,5 @@
-import matrixLogo from '../assets/matrix-logo.png'; 
+import matrixLogo from "../../assets/matrix-logo.png";
+
 
 
 const Footer = () => {
