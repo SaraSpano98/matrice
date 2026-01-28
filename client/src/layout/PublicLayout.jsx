@@ -2,7 +2,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import Footer from '../components/Footer.jsx';
 import Navbar from '../components/Navbar.jsx';
 import { checkPath } from '../utils/checkPath.js';
-import config from '../config/config.js';
+import { config } from '../config/index.js';
 
 const PublicLayout = () => {
     const location = useLocation();
