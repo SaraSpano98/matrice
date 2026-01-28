@@ -24,7 +24,7 @@ const Navbar = () => {
         <div className="flex items-center space-x-2">
           <img src={matrixLogo} alt="Matrix Logo" className="h-12 object-contain" />
           <span className="text-xl font-bold text-dark dark:text-light">
-            {t("navbar.title") || "Matrix of Destiny"}
+            {t("navbar.title") || "Matrice del Destino"}
           </span>
         </div>
 
