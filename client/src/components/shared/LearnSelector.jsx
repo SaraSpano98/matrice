@@ -9,7 +9,7 @@ export default function LearnSelector() {
 
   const items = [
     { to: "/impara/matrice-vuota", label: t("impara.matriceVuota.title") },
-    { to: "/impara/zona-matrice", label: t("impara.zonaMatrice.title") },
+    { to: "/impara/zone-matrice", label: t("impara.zoneMatrice.title") },
     { to: "/impara/arcani-maggiori", label: t("impara.arcaniMaggiori.title") },
   ];
 
@@ -32,7 +32,7 @@ export default function LearnSelector() {
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center justify-between w-full md:w-auto p-2 text-dark dark:text-light hover:text-gray-700 dark:hover:text-gray-300 hover:bg-violet-600 hover:dark:bg-purple-900 rounded transition-colors font-semibold"
       >
-        📚 {t("navbar.impara")}
+        {t("navbar.impara")}
         <span className="ml-2">{isOpen ? "▲" : "▼"}</span>
       </button>
 

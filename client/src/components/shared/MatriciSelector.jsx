@@ -6,9 +6,9 @@ export default function MatriciSelector() {
   const timeoutRef = useRef(null);
 
   const matrici = [
-    { to: "/matrici/matrice1", label: "Matrice Personale" },
-    { to: "/matrici/matrice2", label: "Matrice di Compatibilità" },
-    { to: "/matrici/matrice3", label: "Matrice del Bambino/a" },
+    { to: "/matrici/matrice-personale", label: "MATRICE PERSONALE" },
+    { to: "/matrici/matrice-di-compatibilità", label: "MATRICE DI COMPATIBILITA'" },
+    { to: "/matrici/matrice-del-la-bambino-a", label: "MATRICE DEL/LA BAMBINO/A" },
   ];
 
   const openMenu = () => {
@@ -30,7 +30,7 @@ export default function MatriciSelector() {
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center justify-between w-full md:w-auto p-2 text-dark dark:text-light hover:text-gray-700 dark:hover:text-gray-300 hover:bg-violet-600 hover:dark:bg-purple-900 rounded transition-colors font-semibold"
       >
-        📊 Seleziona Matrice
+         SELEZIONA MATRICE
         <span className="ml-2">{isOpen ? "▲" : "▼"}</span>
       </button>
 
