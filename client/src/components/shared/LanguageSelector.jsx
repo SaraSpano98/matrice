@@ -32,9 +32,13 @@ export default function LanguageSelector({ i18n }) {
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 w-full md:w-auto p-2 text-gray-700 hover:text-dark dark:text-gray-500 dark:hover:text-light bg-primary dark:bg-secondary rounded transition-colors"
+        className="flex items-center gap-2 w-full md:w-auto p-2 text-gray-700 hover:text-dark dark:text-gray-500 dark:hover:text-light
+                       hover:bg-violet-600 hover:dark:bg-purple-900 
+                       hover:shadow-lg hover:dark:shadow-purple-700 
+                       active:scale-95 active:shadow-none 
+                       transition-all duration-200 rounded"
       >
-        🌎 TRADUTTORE
+        🌎
         <span className="ml-2">{isOpen ? "▲" : "▼"}</span>
       </button>
 

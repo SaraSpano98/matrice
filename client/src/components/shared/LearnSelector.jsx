@@ -1,16 +1,15 @@
 import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
+
 
 export default function LearnSelector() {
-  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const timeoutRef = useRef(null);
 
   const items = [
-    { to: "/impara/matrice-vuota", label: t("impara.matriceVuota.title") },
-    { to: "/impara/zone-matrice", label: t("impara.zoneMatrice.title") },
-    { to: "/impara/arcani-maggiori", label: t("impara.arcaniMaggiori.title") },
+    { to: "/impara/matrice-vuota", label: "IMPARA MATRICE VUOTA"},
+    { to: "/impara/zone-matrice", label: "IMPARA ZONE MATRICI" },
+    { to: "/impara/arcani-maggiori", label: "IMPARA ARCANI MAGGIORI"},
   ];
 
   const openMenu = () => {
@@ -32,7 +31,7 @@ export default function LearnSelector() {
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center justify-between w-full md:w-auto p-2 text-gray-700 hover:text-dark dark:text-gray-500 dark:hover:text-light hover:bg-violet-600 hover:dark:bg-purple-900 rounded transition-colors font-semibold"
       >
-        {t("navbar.impara")}
+        IMPARA LA MATRICE
         <span className="ml-2">{isOpen ? "▲" : "▼"}</span>
       </button>
 

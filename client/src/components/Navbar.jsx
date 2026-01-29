@@ -23,7 +23,6 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 w-full z-50 bg-primary/95 dark:bg-secondary/95 backdrop-blur border-b border-gray-300 dark:border-gray-600">
       <div className="max-w-7xl mx-auto px-5 md:px-10 py-5 flex items-center justify-between relative">
-
         {/* LOGO SINISTRA */}
         <div className="absolute left-0 flex items-center pl-2 md:pl-4">
           <img
@@ -63,12 +62,16 @@ const Navbar = () => {
             {darkMode ? "🌙" : "☀️"}
           </button>
 
-          <Link
-            to="/contact"
-            className="text-gray-700 hover:text-dark dark:text-gray-500 dark:hover:text-light opacity-80 hover:opacity-100 transition"
+          <div
+            className="bg-primary dark:bg-secondary hover:bg-violet-600 hover:dark:bg-purple-900 hover:shadow-lg hover:dark:shadow-purple-700 rounded active:scale-95 transition-all duration-200"
           >
-            CONTATTI
-          </Link>
+            <Link
+              to="/contact"
+              className="text-gray-700 hover:text-dark dark:text-gray-500 dark:hover:text-light opacity-80 hover:opacity-100 transition"
+            >
+              CONTATTI
+            </Link>
+          </div>
         </div>
 
         {/* MOBILE */}
@@ -125,5 +128,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
