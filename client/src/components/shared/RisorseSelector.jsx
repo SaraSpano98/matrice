@@ -1,14 +1,12 @@
 import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 
-export default function LearnSelector() {
+export default function RisorseSelector() {
   const [isOpen, setIsOpen] = useState(false);
   const timeoutRef = useRef(null);
 
   const items = [
-    { to: "/impara/matrice-vuota", label: "IMPARA MATRICE VUOTA" },
-    { to: "/impara/zone-matrice", label: "IMPARA ZONE MATRICI" },
-    { to: "/impara/arcani-maggiori", label: "IMPARA ARCANI MAGGIORI" },
+    { to: "/impara/matrice-vuota", label: "MATRICE VUOTA" },
   ];
 
   const openMenu = () => {
@@ -28,18 +26,17 @@ export default function LearnSelector() {
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-between w-full md:w-auto p-2 text-gray-700 hover:text-dark dark:text-gray-500 dark:hover:text-light
+        className="flex items-center justify-between gap-2 p-2 text-gray-700 hover:text-dark dark:text-gray-500 dark:hover:text-light
                    hover:bg-violet-600 hover:dark:bg-purple-900 
                    hover:shadow-lg hover:dark:shadow-purple-700
-                   active:scale-95
-                   transition-all duration-200 rounded font-semibold"
+                   active:scale-95 transition-all duration-200 rounded font-semibold uppercase font-matrix"
       >
-        IMPARA LA MATRICE
-        <span className="ml-2">{isOpen ? "▲" : "▼"}</span>
+        RISORSE
+        <span>{isOpen ? "▲" : "▼"}</span>
       </button>
 
       <div
-        className={`absolute left-0 mt-1 w-auto min-w-[220px] bg-primary dark:bg-secondary border border-gray-500 dark:border-gray-800 rounded shadow-md z-20
+        className={`absolute left-0 mt-1 w-auto min-w-[180px] bg-primary dark:bg-secondary border border-gray-500 dark:border-gray-800 rounded shadow-md z-20
           transform transition-all duration-300
           ${isOpen ? "opacity-100 scale-y-100 translate-y-0" : "opacity-0 scale-y-90 -translate-y-4 pointer-events-none"}`}
         style={{ transformOrigin: "top center" }}
@@ -50,11 +47,9 @@ export default function LearnSelector() {
             to={to}
             onClick={() => setIsOpen(false)}
             className="block px-3 py-1.5 text-gray-700 hover:text-dark dark:text-gray-500 dark:hover:text-light
-                       hover:translate-y-0.5 hover:scale-105 
                        hover:bg-violet-600 hover:dark:bg-purple-900 
                        hover:shadow-lg hover:dark:shadow-purple-700 
-                       active:scale-95
-                       transition-all duration-200 rounded"
+                       active:scale-95 transition-all duration-200 rounded"
           >
             {label}
           </Link>
@@ -63,7 +58,3 @@ export default function LearnSelector() {
     </div>
   );
 }
-
-
-
-
