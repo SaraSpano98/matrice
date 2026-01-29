@@ -9,9 +9,8 @@ import LanguageSelector from "./shared/LanguageSelector";
 
 import matrixLogo from "../assets/matrixLogo.png";
 
-
 const Navbar = () => {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   const {
     settings: { darkMode },
     toggleDarkMode,
@@ -23,49 +22,39 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-primary/95 dark:bg-secondary/95 backdrop-blur border-b border-gray-300 dark:border-gray-600">
-      <div className="max-w-7xl mx-auto px-5 md:px-10 py-3 flex items-center justify-between relative">
+      <div className="max-w-7xl mx-auto px-5 md:px-10 py-5 flex items-center justify-between relative">
 
-        {/* LOGO ANIMATO SINISTRA */}
+        {/* LOGO SINISTRA */}
         <div className="absolute left-0 flex items-center pl-2 md:pl-4">
           <img
             src={matrixLogo}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="h-12 md:h-14 object-contain"
+            alt="Matrix Logo"
+            className="h-10 md:h-12 object-contain animate-breath"
             style={{ animation: "slowPulse 6s ease-in-out infinite" }}
           />
         </div>
 
-        {/* LINKS SINISTRA */}
+        {/* LINKS SINISTRA (Home rimossa) */}
         <div className="hidden md:flex items-center gap-6 text-sm font-medium ml-20">
-          <Link
-            to="/"
-            className="text-dark dark:text-light opacity-80 hover:opacity-100 transition"
-          >
-            {t("navbar.home")}
-          </Link>
-          <MatriciSelector />
-          <LearnSelector />
+          <MatriciSelector className="uppercase font-matrix" />
+          <LearnSelector className="uppercase font-matrix" />
         </div>
 
-        {/* LOGO CENTRALE AREA */}
-         {/* Area del logo centrale aggiornata */}
-      <div className="flex items-center space-x-3">
-        {/* Stella sinistra */}
-        <span className="text-yellow-400 text-xl">✦</span>
-        
-        {/* Testo "Matrix" */}
-        <span className="text-3xl font-serif font-bold text-dark dark:text-light">Matrix</span>
-        
-        {/* Stella destra */}
-        <span className="text-yellow-400 text-xl">✦</span>
-      </div>
+        {/* LOGO CENTRALE COME LINK ALLA HOME */}
+        <Link
+          to="/"
+          className="absolute left-1/2 -translate-x-1/2 flex items-center space-x-3"
+        >
+          <span className="text-yellow-400 text-xl">✦</span>
+          <span className="text-3xl font-serif font-bold text-dark dark:text-light font-matrix">
+            Matrix
+          </span>
+          <span className="text-yellow-400 text-xl">✦</span>
+        </Link>
 
         {/* LINKS DESTRA */}
         <div className="hidden md:flex items-center gap-4 text-sm font-medium">
-          <LanguageSelector i18n={i18n} />
+          <LanguageSelector i18n={i18n} className="uppercase font-matrix" />
 
           <button
             onClick={() => toggleDarkMode(!darkMode)}
@@ -76,9 +65,9 @@ const Navbar = () => {
 
           <Link
             to="/contact"
-            className="text-dark dark:text-light opacity-80 hover:opacity-100 transition"
+            className="text-dark dark:text-light opacity-80 hover:opacity-100 transition uppercase font-matrix"
           >
-            CONTACT
+            CONTATTI
           </Link>
         </div>
 
@@ -100,26 +89,18 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* MOBILE MENU */}
+      {/* MOBILE MENU (Home rimossa) */}
       {isMobileMenuOpen && (
         <div className="md:hidden px-5 pt-2 pb-4 space-y-3 border-t border-gray-300 dark:border-gray-600 bg-primary dark:bg-secondary">
-          <Link
-            to="/"
-            className="block text-dark dark:text-light text-sm opacity-90"
-          >
-            {t("navbar.home")}
-          </Link>
-
-          <MatriciSelector />
-          <LearnSelector />
-
-          <LanguageSelector i18n={i18n} />
+          <MatriciSelector className="uppercase font-matrix" />
+          <LearnSelector className="uppercase font-matrix" />
+          <LanguageSelector i18n={i18n} className="uppercase font-matrix" />
 
           <Link
             to="/contact"
-            className="block text-dark dark:text-light text-sm opacity-90"
+            className="block text-dark dark:text-light text-sm opacity-90 uppercase font-matrix"
           >
-            CONTACT
+            CONTATTI
           </Link>
         </div>
       )}
@@ -128,11 +109,16 @@ const Navbar = () => {
       <style>{`
         @keyframes slowPulse {
           0%, 100% { transform: scale(1); }
-          50% { transform: scale(1.08); } /* effetto respiro morbido */
+          50% { transform: scale(1.08); }
         }
-        
+
         .animate-breath {
-          animation: slowPulse 6s ease-in-out infinite;}
+          animation: slowPulse 6s ease-in-out infinite;
+        }
+
+        .font-matrix {
+          font-family: 'Cinzel', serif;
+        }
       `}</style>
     </nav>
   );
