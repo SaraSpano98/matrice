@@ -29,8 +29,6 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 w-full z-50 bg-primary/95 dark:bg-secondary/95 backdrop-blur border-b border-gray-300 dark:border-gray-600">
       <div className="max-w-7xl mx-auto px-5 md:px-10 py-5 flex items-center justify-between relative">
-        
-        {/* LOGO SINISTRA */}
         <div className="absolute left-0 flex items-center pl-2 md:pl-4">
           <img
             src={matrixLogo}
@@ -49,7 +47,7 @@ const Navbar = () => {
         {/* LOGO CENTRALE */}
         <Link
           to="/"
-          className="absolute left-1/2 -translate-x-1/2 flex items-center space-x-3"
+          className="flex items-center space-x-3 transition-transform duration-150 active:scale-110"
         >
           <span className="text-yellow-400 text-xl">✦</span>
           <span className="text-3xl font-serif font-bold text-dark dark:text-light font-matrix">
@@ -60,7 +58,6 @@ const Navbar = () => {
 
         {/* LINKS DESTRA */}
         <div className="hidden md:flex items-center gap-4 text-sm font-medium">
-
           <RisorseSelector />
 
           <LanguageSelector i18n={i18n} />
