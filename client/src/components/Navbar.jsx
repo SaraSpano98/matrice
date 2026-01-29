@@ -58,14 +58,14 @@ const Navbar = () => {
 
           <button
             onClick={() => toggleDarkMode(!darkMode)}
-            className="text-dark dark:text-light px-2 py-1 rounded hover:bg-violet-600 hover:dark:bg-purple-900 transition"
+            className="px-2 py-1 rounded hover:bg-violet-600 hover:dark:bg-purple-900 transition"
           >
             {darkMode ? "🌙" : "☀️"}
           </button>
 
           <Link
             to="/contact"
-            className="text-dark dark:text-light opacity-80 hover:opacity-100 transition uppercase font-matrix"
+            className="text-gray-700 hover:text-dark dark:text-gray-500 dark:hover:text-light opacity-80 hover:opacity-100 transition"
           >
             CONTATTI
           </Link>
@@ -98,7 +98,7 @@ const Navbar = () => {
 
           <Link
             to="/contact"
-            className="block text-dark dark:text-light text-sm opacity-90 uppercase font-matrix"
+            className="block text-gray-700 hover:text-dark dark:text-gray-500 dark:hover:text-light opacity-90"
           >
             CONTATTI
           </Link>

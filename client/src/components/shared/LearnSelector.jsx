@@ -30,7 +30,7 @@ export default function LearnSelector() {
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-between w-full md:w-auto p-2 text-dark dark:text-light hover:text-gray-700 dark:hover:text-gray-300 hover:bg-violet-600 hover:dark:bg-purple-900 rounded transition-colors font-semibold"
+        className="flex items-center justify-between w-full md:w-auto p-2 text-gray-700 hover:text-dark dark:text-gray-500 dark:hover:text-light hover:bg-violet-600 hover:dark:bg-purple-900 rounded transition-colors font-semibold"
       >
         {t("navbar.impara")}
         <span className="ml-2">{isOpen ? "▲" : "▼"}</span>
@@ -47,7 +47,7 @@ export default function LearnSelector() {
             key={to}
             to={to}
             onClick={() => setIsOpen(false)}
-            className="block p-2 text-dark dark:text-light 
+            className="block p-2 text-gray-700 hover:text-dark dark:text-gray-500 dark:hover:text-light
                        hover:translate-y-0.5 hover:scale-105 
                        hover:bg-violet-600 hover:dark:bg-purple-900 
                        hover:shadow-lg hover:dark:shadow-purple-700 
