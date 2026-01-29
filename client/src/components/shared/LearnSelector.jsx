@@ -6,9 +6,8 @@ export default function LearnSelector() {
   const timeoutRef = useRef(null);
 
   const items = [
-    { to: "/impara/matrice-vuota", label: "IMPARA MATRICE VUOTA" },
     { to: "/impara/zone-matrice", label: "IMPARA ZONE MATRICI" },
-    { to: "/impara/arcani-maggiori", label: "IMPARA ARCANI MAGGIORI" },
+    { to: "/impara/arcani-maggiori", label: "IMPARA ARCANI MAGGIORI" }
   ];
 
   const openMenu = () => {
